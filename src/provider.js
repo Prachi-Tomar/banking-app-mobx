@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Provider } from "mobx-react";
-import accountStore from "./stores/accountStore";
+import balanceStore from "./stores/balanceStore";
 import balance from "./balance";
 
 class App extends Component {
     render() {
         return (
-            <Provider accountStore={accountStore}>
+            <Provider balanceStore={balanceStore}>
                 <balance />
             </Provider>
         );
