@@ -1,11 +1,19 @@
-import { extendObservable, action } from "mobx";
+import { action, observable, makeAutoObservable } from "mobx";
 
-export default extendObservable(this, {
-    balance: 0,
-    deposit: action(() => {
-        this.balance += 1;
-    }),
-    withdraw: action(() => {
-        this.balance += 1;
-    })
-});
+class BalanceStore{
+    balance = 0
+    constructor() {
+        makeAutoObservable(this)
+    }
+
+    deposit = (amount) =>
+    {
+        this.balance += amount;
+    }
+    withdraw = (amount) =>
+    {
+        this.balance -= amount;
+    }
+}
+
+export default new BalanceStore();
