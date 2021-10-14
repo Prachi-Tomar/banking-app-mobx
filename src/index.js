@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import BalanceStore from "./balanceStore";
+import rootStore from './stores'
 
 ReactDOM.render(
-    <App store={BalanceStore}/>,
+    <App rootStore={rootStore} transactionStore={rootStore.transactionStore} balanceStore={rootStore.balanceStore} />,
   document.getElementById('root')
 );
 
